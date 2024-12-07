@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Vehículo</title>
+</head>
+<body>
+    <h1>Agregar Vehículo</h1>
+    <form method="POST">
+        {% csrf_token %} <!-- Token de seguridad anti-cross site request forgeries-->
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>
