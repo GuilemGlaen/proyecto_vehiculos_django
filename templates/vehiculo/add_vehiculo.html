@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Agregar Vehículo</title>
-</head>
-<body>
-    <h1>Agregar Vehículo</h1>
-    <form method="POST">
+{% include 'navbar.html' %}
+
+{% block content %}
+    <h1 class="text-center display-4 my-5">Agregar Vehículo</h1>
+    <form method="POST" class="m-5 p-5">
         {% csrf_token %} <!-- Token de seguridad anti-cross site request forgeries-->
+        {{ form|crispy}}
         {{ form.as_p }}
-        <button type="submit">Guardar</button>
+        <button type="submit" class="btn btn-success">Guardar</button>
     </form>
-</body>
-</html>
+{% endblock content %}

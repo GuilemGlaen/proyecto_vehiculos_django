@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'vehiculo.apps.VehiculoConfig', # Registro de APP 'vehiculo'
+    'usuario.apps.UsuarioConfig', # Registro de APP 'usuario'
+    'bootstrap5', # Registro de APP 'django-bootstrap5'
+    'crispy_forms', # Registro de APP 'django-crispy-forms'
+    'crispy_bootstrap5', # Registro de APP 'crispy-bootstrap5'
 ]
 
 MIDDLEWARE = [
@@ -106,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-cl'
 
 TIME_ZONE = 'America/Santiago' # Cambio de zona horaria a la local
 

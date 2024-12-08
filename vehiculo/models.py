@@ -22,17 +22,17 @@ class ModeloVehiculo(models.Model):
     """
     # Selectores de Marca
     Marca = (
-        ('FIAT', 'fiat'),
-        ('CHEVROLET', 'Chevrolet'),
-        ('FORD', 'Ford'),
-        ('Toyota', 'Toyota'),
+        ('FIAT', 'FIAT'),
+        ('CHEVROLET', 'CHEVROLET'),
+        ('FORD', 'FORD'),
+        ('TOYOTA', 'TOYOTA'),
     )
 
     # Selectores de categoría
     Categoria = (
-        ('PARTICULAR', 'Particular'),
-        ('TRANSPORTE', 'Transporte'),
-        ('CARGA', 'Carga'),
+        ('PARTICULAR', 'PARTICULAR'),
+        ('TRANSPORTE', 'TRANSPORTE'),
+        ('DE CARGA', 'DE CARGA'),
     )
 
     # Campos
@@ -46,4 +46,4 @@ class ModeloVehiculo(models.Model):
     fecha_modificado = models.DateTimeField(auto_now = True, verbose_name='Última modificación')
     
     def __str__(self): 
-        return f'Vehiculo marca {self.marca}, modelo {self.modelo}, categoría {self.categoria}. PRECIO LISTA: {self.precio}'
+        return f'Vehiculo marca {self.marca}, modelo {self.modelo}, categoría {self.categoria}. PRECIO: {self.precio}'

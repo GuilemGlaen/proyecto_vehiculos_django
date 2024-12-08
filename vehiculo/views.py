@@ -13,7 +13,12 @@ def add_vehiculo(request):
         form = VehiculoForm(request.POST)
         if form.is_valid():
             form.save()  # guarda los datos ingresados en la base de datos
-            return redirect('/')  # redirije a...
+            return redirect('/')  # redirije a /admin
     else:
         form = VehiculoForm()
     return render(request, 'vehiculo/add_vehiculo.html', {'form': form})
+
+# Se define vista para la barra de navegacion
+def navbarView(request):
+    template_name = "navbar.html"
+    return render(request, template_name)
