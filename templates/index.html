@@ -1,4 +1,17 @@
-{% include 'navbar.html' %}
+{% extends 'base.html' %}
+{% block title %} Index{% endblock %}
+
 {% block content %}
-<h1 class="text-center display-2 my-5">Catálogo de Vehículos</h1>
+<div class="container pt-2">
+    <div class="container mt-4 text-center">
+        {% load static %}
+        <img src="{% static 'img/Automoviles.jpg' %}" alt="background Img" class="img-fluid w-75 mb-4" />
+        <hr>
+        <p class="lead fs-6 text-center">
+            No tienes una cuenta? Crea una <a href="/registro">aquí!</a> o tal vez necesitas <a href="/login">iniciar
+                sesión</a> | Eres administrador? quizás deseas igresar al <a href="/admin" target="_blank"
+                rel="noopener noreferrer">sitio administrativo</a>
+        </p>
+    </div>
+</div>
 {% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} Acceso Restringuido{% endblock %}
+
+{% block content %}
+<div class="container pt-2 text-center">
+    {% load static %}
+    <img src="{% static 'img/Restricted.gif' %}" alt="background Img" class="img-fluid w-25" />
+    <h1 class="display-2 text-danger text-center my-4">Error 403 - Acceso denegado!</h1>
+    <p class="lead fs-4 text-secondary text-center pb-4 mb-4">
+        El usuario no está registrado, o no tiene los permisos suficientes para acceder a esta sección.
+        <br>
+        Por favor, inicie sesión o cree una cuenta.
+    </p>
+    <hr>
+    <p class="lead fs-6 text-center">
+        No tienes una cuenta? Crea una <a href="/registro">aquí!</a> o tal vez necesitas <a href="/login">iniciar
+            sesión</a> | Eres administrador? quizás deseas igresar al <a href="/admin" target="_blank"
+            rel="noopener noreferrer">sitio administrativo</a>
+    </p>
+</div>
+{% endblock %}

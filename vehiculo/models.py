@@ -16,6 +16,8 @@ from django.db import models
 #Precio.
 #Fecha de creación.
 #Fecha de modificación.
+
+#Modelo Vehiculo
 class ModeloVehiculo(models.Model):
     """
     Clase que define el Modelo de datos para vehiculo.
@@ -44,6 +46,14 @@ class ModeloVehiculo(models.Model):
     precio = models.IntegerField(verbose_name='Precio')
     fecha_creacion = models.DateField(auto_now_add=True, verbose_name='Fecha Registro')
     fecha_modificado = models.DateTimeField(auto_now = True, verbose_name='Última modificación')
+
+    # Permisos
+    class Meta:
+        permissions = [
+            ("view_vehiculo", "Puede ver la lista de vehículos"),
+            ("add_vehiculo", "Puede añadir nuevos vehículos"),
+        ]
     
+    # Método de representación
     def __str__(self): 
         return f'Vehiculo marca {self.marca}, modelo {self.modelo}, categoría {self.categoria}. PRECIO: {self.precio}'

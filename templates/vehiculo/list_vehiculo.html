@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %} Lista de Vehículos{% endblock %}
+
+{% block content %}
+<div class="container pt-2">
+    <h1 class="display-4 text-center my-4">Vehículos registrados</h1>
+    <table class="table mb-5 p-4">
+        <thead>
+            <tr class="table-dark">
+                <th class="lead fw-bold fs-6 text-center">Marca</th>
+                <th class="lead fw-bold fs-6 text-center">Modelo</th>
+                <th class="lead fw-bold fs-6 text-center">N° Carrocería</th>
+                <th class="lead fw-bold fs-6 text-center">N° Motor</th>
+                <th class="lead fw-bold fs-6 text-center">Categoría</th>
+                <th class="lead fw-bold fs-6 text-center">Precio</th>
+                <th class="lead fw-bold fs-6 text-center">Rango de Costo</th>
+                <th class="lead fw-bold fs-6 text-center">Fecha Registro</th>
+                <th class="lead fw-bold fs-6 text-center">Última modificación</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vehiculo in vehiculos %}
+            <tr>
+                <td class="lead fs-6">{{ vehiculo.marca }}</td>
+                <td class="lead fs-6">{{ vehiculo.modelo }}</td>
+                <td class="lead fs-6">{{ vehiculo.serial_carroceria }}</td>
+                <td class="lead fs-6">{{ vehiculo.serial_motor }}</td>
+                <td class="lead fs-6">{{ vehiculo.categoria }}</td>
+                <td class="lead fs-6">${{ vehiculo.precio }}</td>
+                <td class="lead fs-6">
+                    {% if vehiculo.precio <= 10000 %}
+                        Bajo
+                    {% elif vehiculo.precio > 10000 and vehiculo.precio <= 30000 %}
+                        Medio
+                    {% else %}
+                        Alto
+                    {% endif %}
+                </td>
+                <td class="lead fs-6">{{ vehiculo.fecha_creacion }}</td>
+                <td class="lead fs-6">{{ vehiculo.fecha_modificado }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="8" class="lead fs-6 text-center">No hay vehículos registrados en la base de datos!</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <p class="lead fs-6 text-center">
+        No tienes una cuenta? Crea una <a href="/registro">aquí!</a> o tal vez necesitas <a href="/login">iniciar
+            sesión</a> | Eres administrador? quizás deseas igresar al <a href="/admin" target="_blank"
+            rel="noopener noreferrer">sitio administrativo</a>
+    </p>
+</div>
+{% endblock content %}

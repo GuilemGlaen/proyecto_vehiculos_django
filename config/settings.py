@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'crispy_bootstrap5', # Registro de APP 'crispy-bootstrap5'
 ]
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -54,13 +57,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+LOGIN_URL = '/login/' # Redirecciona a la pagina de login definida en 'urls.py'
+
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'templates', # Se agrega directorio base 'templates' (agrega todos los directorio de este nombre) para buscar los archivos html
+            BASE_DIR / 'templates' # Se agrega directorio base 'templates' (agrega todos los directorio de este nombre) para buscar los archivos html
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -123,6 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

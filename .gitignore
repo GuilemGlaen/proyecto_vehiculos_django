@@ -1,20 +1,16 @@
-# Entornos virtuales
+# Ignorar configuraciones específicas de VS Code
+.vscode/
+
+# Ignorar dependencias de Node.js (si usas npm o yarn)
+node_modules/
+
+# Archivos de logs
+*.log
+
+# Ignorar entornos virtuales de Python (si aplica)
 venv/
-env/
+
+# Ignorar binarios y resultados de compilación
+*.exe
+*.class
 *.pyc
-__pycache__/
-
-# Configuración específica del sistema operativo
-.DS_Store
-Thumbs.db
-
-# Archivos de configuración sensibles
-*.sqlite3
-.env
-
-# Archivos de migraciones (opcional, dependiendo de tu flujo de trabajo)
-migrations/
-
-# Archivos estáticos generados
-static/
-media/

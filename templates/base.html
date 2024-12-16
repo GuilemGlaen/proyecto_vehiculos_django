@@ -5,19 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    {% load bootstrap5 %}
+    <!-- Favicon -->
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'Favicon.png' %}">
     
+    <title>Proyecto Vehículos:{% block title %}{% endblock %}</title>
+
+    {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
     {% bootstrap_messages %}
-    
-    <title>{% block title %}{% endblock %}</title> 
 
 </head>
-    
 <body>   
-    
+
+    {% include 'navbar.html' %}
+
     {% block content %}
     {% endblock content %}
     
 </body>
+</html>

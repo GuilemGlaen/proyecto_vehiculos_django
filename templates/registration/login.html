@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %} Login Usuario{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container pt-2">
+    <h1 class="display-4 text-center my-4">Login</h1>
+    <div class="container-fluid row d-flex justify-content-center">
+        <form method="POST" class="mx-auto my-4 p-4 col-6">
+            {% csrf_token %} <!-- Token de seguridad anti-cross site request forgeries -->
+            {{ Login_Form.username|as_crispy_field }}
+            {{ Login_Form.password|as_crispy_field }}
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary mt-4 px-5"> Login </button>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <p class="lead fs-6 text-center">
+        No tienes una cuenta? Crea una <a href="/registro">aquí!</a> | Eres administrador? quizás deseas igresar al <a
+            href="/admin" target="_blank" rel="noopener noreferrer">sitio administrativo</a>
+    </p>
+</div>
+{% endblock %}
